@@ -47,8 +47,8 @@ const MovieComponent = ({heading,choice1,choice2,data1,data2}) => {
     <div className='text-white w-full'>
 
     <div className='flex justify-between'>
-        <h1>{heading}</h1>
-        <p className='flex gap-[1rem] cursor-pointer'>
+        <h1 className='text-3xl'>{heading}</h1>
+        <p className='flex gap-[1rem] cursor-pointer text-xl'>
             <span className={flag?"text-red-500":"text-white"} onClick={()=>setFalg(true)}>{choice1}</span>
             <span className={!flag?"text-red-500":"text-white"} onClick={()=>setFalg(false)}>{choice2}</span>
         </p>
@@ -56,7 +56,7 @@ const MovieComponent = ({heading,choice1,choice2,data1,data2}) => {
 
 
     
-    <Slider {...settings}>
+    <Slider {...settings} >
 {
     flag?(
     data1.map((movie,index)=>{
@@ -79,3 +79,4 @@ const MovieComponent = ({heading,choice1,choice2,data1,data2}) => {
 }
 
 export default MovieComponent
+
