@@ -15,9 +15,9 @@ const Hero = () => {
         exercitationem nisi necessitatibus totam vero dolore nihil quas ipsum!
         Labore, totam.
       </p>
-      <form className="m-[1rem]" onClick={(e)=>{handleClick(e)}}>
-        <input type="Text" className=" hover:none focus:outline-none rounded-l-[1rem]	  w-[25rem] h-[3.5rem] "></input>
-        <button type="submit" className="bg-blue-300 h-[3.5rem] w-[5rem] rounded-r-[1rem] focus:outline-pink-600">Search</button>
+      <form  className="m-[2rem] flex" onClick={(e)=>{handleClick(e)}} >
+        <input type="Text" className=" focus:outline-none rounded-l-[1rem] w-[25rem] h-[3.4rem] pl-[1rem]  "></input>
+        <button  className="bg-blue-300 h-[3.4rem] w-[5rem] rounded-r-[1rem] focus:outline-pink-600 ">Search</button>
       </form>
     </div>
   );
