@@ -12,7 +12,7 @@ export const fetchTrendingMovies=createAsyncThunk(
              axios.get("https://api.themoviedb.org/3/trending/movie/week?language=en-US&api_key=" +
             import.meta.env.VITE_TMDB_API_KEY)
           ]);
-          console.log(day,week);
+          
           return {
             trendingMoviesByDay:day.data.results,
             trendingMoviesByWeek:week.data.results,
@@ -65,6 +65,25 @@ export const fetchTopRated=createAsyncThunk(
 )
 
 
+export const fetchsearchMovies=createAsyncThunk(
+  "searchMovie",
+    async(searchTerm)=>{
+        try {
+          
+          const result= await Promise.all([
+             axios.get(`https://api.themoviedb.org/3/search/movie?query=${searchTerm}&include_adult=false&language=en-US&api_key=${import.meta.env.VITE_TMDB_API_KEY}`),
+             
+          ]);
+          
+          return {searchMovies:result[0].data.results};
+          
+          
+        } catch (error) {
+          console.log(error)
+        }
+    }
+)
+
 
 
 
@@ -78,6 +97,8 @@ export const slice= createSlice(
             popularTv:[],
             topRatedMovie:[],
             topRatedTv:[],
+            searchMovies:[],
+            
             
         },
         reducers:{},
@@ -116,6 +137,18 @@ export const slice= createSlice(
                 state.status = "There is an error";
                 state.error = action.payload;
               })
+              .addCase(fetchsearchMovies.pending, (state, action) => {
+                state.status = "Loading...";
+              })
+              .addCase(fetchsearchMovies.fulfilled, (state, action) => {
+                state.searchMovies = action.payload.searchMovies;
+                
+              })
+              .addCase(fetchsearchMovies.rejected, (state, action) => {
+                state.status = "There is an error";
+                state.error = action.payload;
+              })
+
               ;
         }
 

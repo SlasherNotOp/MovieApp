@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import MovieComponent from './MovieComponent';
-import { fetchPopularMovies, fetchTopRated, fetchTrendingMovies } from './slice';
+import { fetchPopularMovies, fetchTopRated, fetchTrendingMovies} from './slice';
 
 const First = () => {
 
   const dispatch=useDispatch();
+
 
   const{
     trendingMoviesByDay,
@@ -14,6 +15,8 @@ const First = () => {
     popularTv,
     topRatedMovie,
     topRatedTv,
+    
+
 
   }= useSelector((state)=>{
     return state.movieReducer;
@@ -30,6 +33,10 @@ const First = () => {
   useEffect(()=>{
     dispatch(fetchTopRated())
   },[dispatch]);
+
+  
+
+  
 
   
 
