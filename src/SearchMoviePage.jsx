@@ -22,15 +22,16 @@ const SearchMoviePage = () => {
 
     const{searchTerm}= useParams();
   return (
-    <div className='bg-[#04152d] h-screen w-full mx-[10rem]'>
+    <div className='bg-[#04152d] h-full w-full'>
       <h1>this is seach result</h1>
-      <div className='text-white w-full'>
+      <div className='text-white w-full flex flex-wrap px-20'>
         {
             searchMovies.map((movie,index)=>{
                 return(
                     <>
+                    <div className='w-1/6'>
                     <Moviedata data={movie} key={index}/>
-
+                    </div>
                     </>
                 );
             })
