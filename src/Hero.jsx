@@ -16,7 +16,7 @@ const Hero = () => {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  waitForAnimate: false
+  waitForAnimate: true
 };
 
 
@@ -47,12 +47,12 @@ useEffect(()=>{
     <div className="flex flex-col h-[100vh] justify-center align-center w-[100%] text-center items-center relative">
     
     
-    <div className="h-screen w-full text-white z-10 absolute">
+    {/* <div className="h-screen w-full text-white z-10 absolute">
     <Slider {...settings}>
     {trendingMoviesByDay.map((movie)=>{
      return(
       <div className="h-screen w-full">
-      <img src={"https://image.tmdb.org/t/p/original//" + movie.poster_path } className="w-full h-screen opacity-30 object-cover"></img>
+      <img src={"https://image.tmdb.org/t/p/original//" + movie.backdrop_path } className="w-full h-screen opacity-30 object-cover"></img>
       </div>
      );
         
@@ -61,7 +61,7 @@ useEffect(()=>{
       
       </div>
     <div className="h-screen absolute bg-black  opacity-50">
-    </div>
+    </div> */}
 
     <div className="relative z-20">
       <h1 className="sm:text-5xl text-4xl font-bold text-white mb-4">Welcome.</h1>

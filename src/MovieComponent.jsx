@@ -49,8 +49,8 @@ const MovieComponent = ({heading,choice1,choice2,data1,data2}) => {
     <div className='flex justify-between'>
         <h1 className='sm:text-3xl text-xl'>{heading}</h1>
         <p className='flex gap-[1rem] cursor-pointer text-xl'>
-            <span className={ flag?"text-red-500 duration-300 transition-all ease-in-out text-2xl":"transition-all ease-in-out text-white text-lg"} onClick={()=>setFalg(true)}>{choice1}</span>
-            <span className={!flag?"text-red-500 duration-300 transition-all ease-in-out text-2xl":"transition-all ease-in-out text-white text-lg"} onClick={()=>setFalg(false)}>{choice2}</span>
+            <span className={ flag?"text-red-500 duration-300  ":" text-white "} onClick={()=>setFalg(true)}>{choice1}</span>
+            <span className={!flag?"text-red-500 duration-300  ":" text-white "} onClick={()=>setFalg(false)}>{choice2}</span>
         </p>
     </div>
 
