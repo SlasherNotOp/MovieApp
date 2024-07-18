@@ -41,7 +41,7 @@ const MovieTab = () => {
   }
 
   return (
-    <div className="single flex justify-around  w-full  relative pt-14">
+    <div className="single flex justify-around  w-full  relative pt-14 ">
     <div className='w-full h-screen'>
     <img src={img_base_path + movie.backdrop_path} alt="" className=' object-cover w-full h-screen' />
       <div className="absolute inset-0 bg-black opacity-80"></div>

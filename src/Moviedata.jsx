@@ -7,9 +7,15 @@ const Moviedata = ({data}) => {
         <div className='bg-black opacity-65 ease-in-out duration-500 hover:scale-105 hover:opacity-100 rounded-[1rem]' >
         <Link to={"/movie/"+data.id}><img src={"https://image.tmdb.org/t/p/original//" + data.poster_path} className="w-full h-full object-cover rounded-[1rem] hover:ring-4 mb-4"></img></Link></div>
         <h1>{data.title||data.name}</h1>
-        <p>{data.release_date||data.first_air_date}</p>
+        <p>{formatDate (data.release_date)||formatDate (data.first_air_date)}</p>
     </div>
   )
 }
 
 export default Moviedata
+
+function formatDate(dateString) {
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", options);
+}

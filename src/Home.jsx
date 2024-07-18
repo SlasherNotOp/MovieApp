@@ -61,7 +61,7 @@ const Home = () => {
 
 
     
-    <div className="h-[90vh] w-full absolute top-0 bg-black  opacity-50">
+    <div className="h-[90vh] w-full absolute top-0 bg-black z-10 opacity-50">
     
     </div>
     <div className='lg:mx-[10rem] mx-16 relative'>
