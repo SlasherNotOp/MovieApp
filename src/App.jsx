@@ -7,6 +7,7 @@ import Home from "./Home"
 import Header from './Header'
 import Footer from './Footer'
 import SearchMoviePage from './SearchMoviePage'
+import MovieTab from './MovieTab'
 
 function App() {
  
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route element={<Home/>} path="/"></Route>
         <Route element={<SearchMoviePage/>} path="/search/:searchTerm"></Route>
+        <Route element={<MovieTab/>} path="/movie/:id"></Route>
       </Routes>
       <Footer/>
     </BrowserRouter>

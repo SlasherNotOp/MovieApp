@@ -40,14 +40,14 @@ const Home = () => {
   
   
   return (
-    <div className='bg-[#04152d] h-full w-full relative'>
+    <div className='bg-[#04152d] h-full w-full relative '>
 
 
-<div className="h-screen w-[98.9vw] text-white z-10 absolute">
+<div className="h-screen w-[98.9vw] text-white z-20 absolute">
 <Slider {...settings}>
 {trendingMoviesByDay.map((movie)=>{
  return(
-  <div className="h-[80vh] w-screen">
+  <div className="h-[90vh] w-screen">
   <img src={"https://image.tmdb.org/t/p/original//" + movie.backdrop_path } className="w-screen h-full opacity-30 object-cover"></img>
   </div>
  );
@@ -61,7 +61,7 @@ const Home = () => {
 
 
     
-    <div className="h-[80vh] w-full absolute top-0 bg-black  opacity-50">
+    <div className="h-[90vh] w-full absolute top-0 bg-black  opacity-50">
     
     </div>
     <div className='lg:mx-[10rem] mx-16 relative'>
